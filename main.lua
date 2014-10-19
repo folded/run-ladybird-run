@@ -60,5 +60,6 @@ function love.load()
 end
 
 function love.draw()
-	love.graphics.draw(images.RAMP_EAST, 0, 0)
+	love.graphics.draw(images.CHARACTER_BOY,25, 125)
+	love.graphics.draw(images.SPEECHBUBBLE, 80, 65)
 end

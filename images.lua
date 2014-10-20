@@ -5,7 +5,7 @@ images.CHARACTER_CAT_GIRL =      { ch = '2', im = love.graphics.newImage("images
 images.CHARACTER_HORN_GIRL =     { ch = '3', im = love.graphics.newImage("images/Character Horn Girl.png") }
 images.CHARACTER_PINK_GIRL =     { ch = '4', im = love.graphics.newImage("images/Character Pink Girl.png") }
 images.CHARACTER_PRINCESS_GIRL = { ch = '5', im = love.graphics.newImage("images/Character Princess Girl.png") }
-images.ENEMY_BUG =               { ch = '@', im = love.graphics.newImage("images/Enemy Bug.png") }
+images.PLAYER =                  { ch = '@', im = love.graphics.newImage("images/Enemy Bug.png") }
 
 images.CHEST_CLOSED =            { ch = '=', im = love.graphics.newImage("images/Chest Closed.png") }
 images.CHEST_LID =               { ch = '-', im = love.graphics.newImage("images/Chest Lid.png") }

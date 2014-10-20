@@ -1,65 +1,18 @@
+require "images"
+require "map"
+
 function love.load()
-	-- body
-	images = {
- 		BROWN_BLOCK =             love.graphics.newImage("images/Brown Block.png"),
- 		CHARACTER_BOY =           love.graphics.newImage("images/Character Boy.png"),
- 		CHARACTER_CAT_GIRL =      love.graphics.newImage("images/Character Cat Girl.png"),
- 		CHARACTER_HORN_GIRL =     love.graphics.newImage("images/Character Horn Girl.png"),
- 		CHARACTER_PINK_GIRL =     love.graphics.newImage("images/Character Pink Girl.png"),
- 		CHARACTER_PRINCESS_GIRL = love.graphics.newImage("images/Character Princess Girl.png"),
- 		CHEST_CLOSED =            love.graphics.newImage("images/Chest Closed.png"),
- 		CHEST_LID =               love.graphics.newImage("images/Chest Lid.png"),
- 		CHEST_OPEN =              love.graphics.newImage("images/Chest Open.png"),
- 		DIRT_BLOCK =              love.graphics.newImage("images/Dirt Block.png"),
- 		DOOR_TALL_CLOSED =        love.graphics.newImage("images/Door Tall Closed.png"),
- 		DOOR_TALL_OPEN =          love.graphics.newImage("images/Door Tall Open.png"),
- 		ENEMY_BUG =               love.graphics.newImage("images/Enemy Bug.png"),
- 		GEM_BLUE =                love.graphics.newImage("images/Gem Blue.png"),
- 		GEM_GREEN =               love.graphics.newImage("images/Gem Green.png"),
- 		GEM_ORANGE =              love.graphics.newImage("images/Gem Orange.png"),
- 		GRASS_BLOCK =             love.graphics.newImage("images/Grass Block.png"),
- 		HEART =                   love.graphics.newImage("images/Heart.png"),
- 		KEY =                     love.graphics.newImage("images/Key.png"),
- 		PLAIN_BLOCK =             love.graphics.newImage("images/Plain Block.png"),
- 		RAMP_EAST =               love.graphics.newImage("images/Ramp East.png"),
- 		RAMP_NORTH =              love.graphics.newImage("images/Ramp North.png"),
- 		RAMP_SOUTH =              love.graphics.newImage("images/Ramp South.png"),
- 		RAMP_WEST =               love.graphics.newImage("images/Ramp West.png"),
- 		ROCK =                    love.graphics.newImage("images/Rock.png"),
- 		ROOF_EAST =               love.graphics.newImage("images/Roof East.png"),
- 		ROOF_NORTH_EAST =         love.graphics.newImage("images/Roof North East.png"),
- 		ROOF_NORTH_WEST =         love.graphics.newImage("images/Roof North West.png"),
- 		ROOF_NORTH =              love.graphics.newImage("images/Roof North.png"),
- 		ROOF_SOUTH_EAST =         love.graphics.newImage("images/Roof South East.png"),
- 		ROOF_SOUTH_WEST =         love.graphics.newImage("images/Roof South West.png"),
- 		ROOF_SOUTH =              love.graphics.newImage("images/Roof South.png"),
- 		ROOF_WEST =               love.graphics.newImage("images/Roof West.png"),
- 		SELECTOR =                love.graphics.newImage("images/Selector.png"),
- 		SHADOW_EAST =             love.graphics.newImage("images/Shadow East.png"),
- 		SHADOW_NORTH_EAST =       love.graphics.newImage("images/Shadow North East.png"),
- 		SHADOW_NORTH_WEST =       love.graphics.newImage("images/Shadow North West.png"),
- 		SHADOW_NORTH =            love.graphics.newImage("images/Shadow North.png"),
- 		SHADOW_SIDE_WEST =        love.graphics.newImage("images/Shadow Side West.png"),
- 		SHADOW_SOUTH_EAST =       love.graphics.newImage("images/Shadow South East.png"),
- 		SHADOW_SOUTH_WEST =       love.graphics.newImage("images/Shadow South West.png"),
- 		SHADOW_SOUTH =            love.graphics.newImage("images/Shadow South.png"),
- 		SHADOW_WEST =             love.graphics.newImage("images/Shadow West.png"),
- 		SPEECHBUBBLE =            love.graphics.newImage("images/SpeechBubble.png"),
- 		STAR =                    love.graphics.newImage("images/Star.png"),
- 		STONE_BLOCK_TALL =        love.graphics.newImage("images/Stone Block Tall.png"),
- 		STONE_BLOCK =             love.graphics.newImage("images/Stone Block.png"),
- 		TREE_SHORT =              love.graphics.newImage("images/Tree Short.png"),
- 		TREE_TALL =               love.graphics.newImage("images/Tree Tall.png"),
- 		TREE_UGLY =               love.graphics.newImage("images/Tree Ugly.png"),
- 		WALL_BLOCK_TALL =         love.graphics.newImage("images/Wall Block Tall.png"),
- 		WALL_BLOCK =              love.graphics.newImage("images/Wall Block.png"),
- 		WATER_BLOCK =             love.graphics.newImage("images/Water Block.png"),
- 		WINDOW_TALL =             love.graphics.newImage("images/Window Tall.png"),
- 		WOOD_BLOCK =              love.graphics.newImage("images/Wood Block.png")
+	map = Map:new {
+		map = {
+			"...##",
+			".~.#.",
+			"...##"
+		}
 	}
 end
 
 function love.draw()
-	love.graphics.draw(images.CHARACTER_BOY,25, 125)
-	love.graphics.draw(images.SPEECHBUBBLE, 80, 65)
+	map:draw(0, 0)
+	--love.graphics.draw(images.CHARACTER_BOY.im, 25, 125)
+	--love.graphics.draw(images.SPEECHBUBBLE.im,  80, 65)
 end

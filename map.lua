@@ -25,7 +25,7 @@ function Map:draw(x, y)
 			local ch = string.sub(self.map[_y], _x, _x)
 			local tile = images.map[ch]
 			if tile ~= nil then
-				love.graphics.draw(tile.im, x + (_x-1) * 99, y + (_y-1) * 80)
+				love.graphics.draw(tile.im, x + (_x-1) * 99, y + (_y-1) * 80 - 50)
 			end
 		end
 	end

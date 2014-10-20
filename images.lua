@@ -25,7 +25,7 @@ images.DOOR_TALL_OPEN =          { ch = ']', im = love.graphics.newImage("images
 
 images.BROWN_BLOCK =             { ch = '?', im = love.graphics.newImage("images/Brown Block.png") }
 images.DIRT_BLOCK =              { ch = '.', im = love.graphics.newImage("images/Dirt Block.png") }
-images.GRASS_BLOCK =             { ch = '"', im = love.graphics.newImage("images/Grass Block.png") }
+images.GRASS_BLOCK =             { ch = '`', im = love.graphics.newImage("images/Grass Block.png") }
 images.PLAIN_BLOCK =             { ch = ':', im = love.graphics.newImage("images/Plain Block.png") }
 images.STONE_BLOCK =             { ch = 's', im = love.graphics.newImage("images/Stone Block.png") }
 images.STONE_BLOCK_TALL =        { ch = 'S', im = love.graphics.newImage("images/Stone Block Tall.png") }

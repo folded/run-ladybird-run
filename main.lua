@@ -60,6 +60,10 @@ function love.draw()
 		offset_y = offset_y - (py - 440)
 	end
 
-	map:draw(offset_x, offset_y)
-	player:draw(offset_x, offset_y)
+	for y = 1, map.H do
+		map:drawY(offset_x, offset_y, y)
+		if player.y == y then
+			player:draw(offset_x, offset_y)
+		end
+	end
 end

@@ -13,8 +13,8 @@ end
 function Player:setMap(map)
   self.map = map
 
-  self.x = 0
-  self.y = 0
+  self.x = 1
+  self.y = 1
   self.facing = 1
 end
 
@@ -37,11 +37,17 @@ function Player:moveWest()
 end
 
 function Player:xPosition()
-  return self.x * 99 + 50
+  return self.x * 99 - 49
+end
+
+function Player:height()
+  local ht = self.map:heightAt(self.x, self.y)
+  return ht
 end
 
 function Player:yPosition()
-  return self.y * 80 + 30
+  local ht = self.map:heightAt(self.x, self.y)
+  return self.y * 80 - 62 - ht * 40
 end
 
 function Player:draw(x, y)

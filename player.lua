@@ -18,21 +18,48 @@ function Player:setMap(map)
   self.facing = 1
 end
 
+function Player:canMoveTo(x, y)
+  local ht_here = self.map:heightAt(self.x, self.y)
+  local ht_there = self.map:heightAt(x, y)
+
+  if ht_there == -1 then
+    return false
+  end
+
+  if ht_there > ht_here + 1 then
+    return false
+  end
+
+  if self.map:tileAt(x, y) == images.WATER_BLOCK then
+    return false
+  end
+
+  return true
+end
+
 function Player:moveSouth()
-  self.y = self.y + 1
+  if self:canMoveTo(self.x, self.y+1) then
+    self.y = self.y + 1
+  end
 end
 
 function Player:moveNorth()
-  self.y = self.y - 1
+  if self:canMoveTo(self.x, self.y-1) then
+    self.y = self.y - 1
+  end
 end
 
 function Player:moveEast()
-  self.x = self.x + 1
+  if self:canMoveTo(self.x+1, self.y) then
+    self.x = self.x + 1
+  end
   self.facing = 1
 end
 
 function Player:moveWest()
-  self.x = self.x - 1
+  if self:canMoveTo(self.x-1, self.y) then
+    self.x = self.x - 1
+  end
   self.facing = -1
 end
 

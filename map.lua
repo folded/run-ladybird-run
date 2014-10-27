@@ -81,21 +81,25 @@ function Map:drawTile(tile, x, y, ox, oy, ht, is_top)
 
 end
 
+function Map:drawY(x, y, _y)
+	for _x = 1, self.W do
+		local ht = self:heightAt(_x, _y)
+		local tile = self:tileAt(_x, _y)
+		if tile ~= nil then
+
+			for _ht = 0, ht-1 do
+				self:drawTile(images.STONE_BLOCK, _x, _y, x, y, _ht, false)
+			end
+
+			self:drawTile(tile, _x, _y, x, y, ht, true)
+		end
+	end
+end
+
 function Map:draw(x, y)
 	local _x, _y, s
 
 	for _y = 1, self.H do
-		for _x = 1, self.W do
-			local ht = self:heightAt(_x, _y)
-			local tile = self:tileAt(_x, _y)
-			if tile ~= nil then
-
-				for _ht = 0, ht-1 do
-					self:drawTile(images.STONE_BLOCK, _x, _y, x, y, _ht, false)
-				end
-
-				self:drawTile(tile, _x, _y, x, y, ht, true)
-			end
-		end
+		self:drawY(x, y, _y)
 	end
 end

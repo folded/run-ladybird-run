@@ -39,8 +39,27 @@ function love.keypressed(key, isrepeat)
 	if key == 'd' then player:moveEast()  end
 end
 
+
+offset_x = 0
+offset_y = 0
+
 function love.draw()
-	map:draw(0, 0)
-	player:draw(0, 0)
-	--love.graphics.draw(images.SPEECHBUBBLE.im,  80, 65)
+	local px = offset_x + player:xPosition()
+	local py = offset_y + player:yPosition()
+
+	if px < 200 then
+		offset_x = offset_x - (px - 200)
+	end
+	if py < 200 then
+		offset_y = offset_y - (py - 200)
+	end
+	if px > 580 then
+		offset_x = offset_x - (px - 580)
+	end
+	if py > 440 then
+		offset_y = offset_y - (py - 440)
+	end
+
+	map:draw(offset_x, offset_y)
+	player:draw(offset_x, offset_y)
 end

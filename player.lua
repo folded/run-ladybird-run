@@ -36,13 +36,21 @@ function Player:moveWest()
   self.facing = -1
 end
 
+function Player:xPosition()
+  return self.x * 99 + 50
+end
+
+function Player:yPosition()
+  return self.y * 80 + 30
+end
+
 function Player:draw(x, y)
   love.graphics.draw(images.PLAYER.im,
-             self.x * 99 + 50,
-             self.y * 80 + 30,
-             0.0,
-             self.facing,
-             1,
-             50,
-             100)
+                     x + self:xPosition(),
+                     y + self:yPosition(),
+                     0.0,
+                     self.facing,
+                     1,
+                     50,
+                     100)
 end
